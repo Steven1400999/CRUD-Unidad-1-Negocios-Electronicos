@@ -144,61 +144,7 @@ document.getElementById('addRecordForm').addEventListener('submit', function(e) 
                 row.parentNode.removeChild(row);
             });
 
-            var modifyButton = document.createElement('button');
-            modifyButton.textContent = 'Modificar';
-            modifyButton.addEventListener('click', function() {
-                document.getElementById('modifyId').value = id;
-                document.getElementById('modifyName').value = name;
-                document.getElementById('modifyDescription').value = description;
-                document.getElementById('modifyPrice').value = price;
-                document.getElementById('modifyCategory').value = category;
-                document.getElementById('modifySubcategory').value = subcategory;
-                document.getElementById('modifyImagePreview').style.display = imageUrl ? 'block' : 'none';
-                document.getElementById('modifyImagePreview').src = imageUrl;
-                var modifyRecordModal = new bootstrap.Modal(document.getElementById('modifyRecordModal'));
-                modifyRecordModal.show();
-            });
-
-            cell.appendChild(deleteButton);
-            cell.appendChild(modifyButton);
-        }
-
-        document.getElementById('modifyImage').addEventListener('change', function() {
-            var preview = document.getElementById('modifyImagePreview');
-            if (this.files && this.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                };
-                reader.readAsDataURL(this.files[0]);
-            } else {
-                preview.src = '';
-                preview.style.display = 'none';
-            }
-        });
-
-        document.getElementById('saveChangesBtn').addEventListener('click', function() {
-            var id = document.getElementById('modifyId').value;
-            var table = document.getElementById('recordsTable').getElementsByTagName('tbody')[0];
-            var row = table.rows[id-1];
-            if(row) {
-                row.cells[1].textContent = document.getElementById('modifyName').value;
-                row.cells[2].textContent = document.getElementById('modifyDescription').value;
-                row.cells[3].textContent = document.getElementById('modifyPrice').value;
-                row.cells[4].textContent = document.getElementById('modifyCategory').value;
-                row.cells[5].textContent = document.getElementById('modifySubcategory').value;
-                var newImageFile = document.getElementById('modifyImage').files[0];
-                var newImageUrl = newImageFile ? URL.createObjectURL(newImageFile) : '';
-                row.cells[6].innerHTML = newImageUrl ? `<img src="${newImageUrl}" style="width: 50px; height: auto;">` : 'No image';
-            }
-            var modifyRecordModal = bootstrap.Modal.getInstance(document.getElementById('modifyRecordModal'));
-            modifyRecordModal.hide();
-        });
-
-        function updateNextId() {
-            document.getElementById('id').value = lastId + 1;
-        }
+            
     </script>
 </body>
 </html>
