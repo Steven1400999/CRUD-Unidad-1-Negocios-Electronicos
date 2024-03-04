@@ -53,7 +53,7 @@ input[type="number"][readonly] {
     width: 100px;
 }
 button[type="submit"] {
-    background-color: transparent;
+    background-color: black;
     border: none;
     cursor: pointer;
     padding: 0;
