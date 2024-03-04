@@ -68,11 +68,11 @@
             updateNextId();
         });
 
-        document.getElementById('addRecordForm').addEventListener('submit', function(e) {
+document.getElementById('addRecordForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
             lastId++;
-            
+
             var name = document.getElementById('name').value;
             var description = document.getElementById('description').value;
             var price = document.getElementById('price').value;
