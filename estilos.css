@@ -54,6 +54,7 @@ input[type="number"][readonly] {
 }
 button[type="submit"] {
     background-color: black;
+    color: white;
     border: none;
     cursor: pointer;
     padding: 0;
