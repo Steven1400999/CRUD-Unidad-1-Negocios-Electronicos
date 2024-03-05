@@ -119,7 +119,7 @@
             var subcategory = document.getElementById('subcategory').value;
             var imageFile = document.getElementById('image').files[0];
             var imageUrl = imageFile ? URL.createObjectURL(imageFile) : '';
-
+            
             var table = document.getElementById('recordsTable').getElementsByTagName('tbody')[0];
             var newRow = table.insertRow();
             var cell1 = newRow.insertCell(0);
@@ -130,7 +130,8 @@
             var cell6 = newRow.insertCell(5);
             var cell7 = newRow.insertCell(6);
             var cell8 = newRow.insertCell(7);
-//
+
+
             cell1.textContent = lastId;
             cell2.textContent = name;
             cell3.textContent = description;
