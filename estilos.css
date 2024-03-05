@@ -83,13 +83,13 @@ table {
     width: 100%;
     margin-top: 20px;
     box-shadow: 0 2px 3px #ccc;
-    background-color: #f8f8f8;
+    background-color: #f2efef;
     border-radius: 8px;
     text-align: center;
     
 }
 th {
-    background-color: black;
+    background-color: rgb(12, 10, 10);
     color: white;
     padding: 12px 15px;
     border: 2px solid white;
